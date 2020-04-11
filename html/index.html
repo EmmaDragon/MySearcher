@@ -6,30 +6,75 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Elfak Searcher</title>
+        <title>E-BookStore</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <body style="background-image: url('http://getwallpapers.com/wallpaper/full/8/6/2/165807.jpg');">
-        <div style="margin-left:7%; margin-top: 5%; ">
-            <div style="display: flex; flex-direction:row;">
-            <img height="40%" width="40%" src="../images/Searcher.png">
-            <div style="margin-left: 1%;">
-            <div>
-            <h1 style="color:white; font-size: 70px; margin-top: 30%; margin-bottom: 5%;">#Elfak Searcher</h1>
-            <h5 style="color:white;">Ovo je aplikacija edukativnog karaktera i vrši <br> pretraživanje dokumenata korišćenjem Elasticsearcha-a.</h5>
-            </div>
-            <div style="display: flex; flex-direction:row; margin-top: 5%;">
-            <input class="form-control form-control-lg border border-white" type="text" placeholder="Type query string ...">
-            <button type="button" class="btn btn-primary border border-white">Search</button>
-            </div>  
-            </div>
-            </div>
-        </div>
-     
-        <footer class="footer-copyright text-center py-5 text-white" >©2020 Elektronski fakultet Niš</footer>
-    </body>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+        <link rel="stylesheet" href="../css/index.css">  </head>
+    
+        <body>
+
+    	<nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #f58442; font-size: 1.75rem">HomePage</strong></a> 
+	  </nav>
+
+    <div id="alert"></div>  
+    <div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>#Look for the book</h3>
+			</div>
+			<div class="card-body">
+				<form name="form">
+                                    <p class="text-white">This is an educational application and serves to demonstrate the work of Elasticsearch.
+                                        <br>The application allows you to search books based on your query.
+                                    </p>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-search"></i></span>
+						</div>
+						<input id="queryString" type="text" class="form-control" aria-labelledby="search" placeholder="Search..." name="search" autocomplete="on">
+				        </div>
+                                        <div class="form-group" >
+						<input  type="button" id="searchDocuments" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+                    <div class="card-footer">
+		    <div class="d-flex justify-content-center links">
+		        <a class="text-white" href="https://www.elfak.ni.ac.rs/">@2020 Elfak</a>
+                    </div>
+	</div>
+</div>
+  <script src="../js/index.js" ></script>
+  <script src="../javascript/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../javascript/popper.min.js"></script>
+  <script src="../javascript/bootstrap.min.js"></script>
+  <script src="../javascript/jquery.easing.1.3.js"></script>
+  <script src="../javascript/jquery.waypoints.min.js"></script>
+  <script src="../javascript/jquery.stellar.min.js"></script>
+  <script src="../javascript/owl.carousel.min.js"></script>
+  <script src="../javascript/jquery.magnific-popup.min.js"></script>
+  <script src="../javascript/aos.js"></script>
+  <script src="../javascript/jquery.animateNumber.min.js"></script>
+  <script src="../javascript/bootstrap-datepicker.js"></script>
+  <script src="../javascript/jquery.timepicker.min.js"></script>
+  <script src="../javascript/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVa1hULe3G5LCVW3Ji88SdPSxGEw9e3M&sensors=true"></script>
+  <script src="../javascript/google-map.js"></script>
+  <script src="../javascript/jquery.cookie.js"></script>
+  <script src="../javascript/main.js"></script>
+</body>
     
 </html>
