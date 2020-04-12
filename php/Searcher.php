@@ -24,7 +24,7 @@ class Searcher {
         return $client;
     }
 
-    public function searchText($field, $query) {
+    public function singleFieldSearch($field, $query) {
         error_reporting(E_ALL & ~E_WARNING);
         $client = $this->openConnection();
 
@@ -47,6 +47,53 @@ class Searcher {
         $books=$this->convertResultToBookObject($results);
         return $books;
         
+    }
+     public function multipleFieldSearch($query) {
+        error_reporting(E_ALL & ~E_WARNING);
+        $client = $this->openConnection();
+
+        $params = [
+            'index' => INDEX,   
+            'type' => 'doc',    
+                               
+            'body' => [
+                'query' => [
+                    'bool' => [
+                        'must' => [
+                            [ 'match' => [ 'title' => $query ] ],
+                            [ 'match' => [ 'content' => $query ] ],
+                     ]
+                ]
+            ]
+        ]
+      ];
+
+        $results = $client->search($params);
+        $books=$this->convertResultToBookObject($results);
+        return $books;
+        
+    }
+    public function multiMatchQuery($query)
+    {
+        error_reporting(E_ALL & ~E_WARNING);
+        $client = $this->openConnection();
+        $params = [
+        'index' => INDEX,
+        'type' => 'doc',
+        'body' => [
+            'query' => [
+                'bool' => [
+                    'should' => [
+                        'multi_match' => [ 'query' => $query,
+                                           'fields' => ['title', 'content']] ]
+                ]
+            ]
+        ]
+    ];
+        
+        $results = $client->search($params);
+        $books=$this->convertResultToBookObject($results);
+        return $books;
     }
     public function convertResultToBookObject($results)
     {

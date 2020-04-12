@@ -9,9 +9,19 @@
     //$indexer->createIndex();
     //$indexer->indexFiles('../books/*.txt');
     //echo $searcher->searchText("content", "anna");
-    if(isset($_POST["singleFiledSearch"]))
+    if(isset($_POST["SingleFieldSearch"]))
     {
-        $books=$searcher->searchText($_POST["typeOfSearch"],$_POST["query"]);
+        $books=$searcher->singleFieldSearch($_POST["typeOfSearch"],$_POST["query"]);
+        echo json_encode($books);
+    }
+    else if(isset($_POST["MultipleFieldSearch"]))
+    {
+        $books=$searcher->multipleFieldSearch($_POST["query"]);
+        echo json_encode($books);
+    }
+    else if(isset($_POST["MultiMatchQuery"]))
+    {
+        $books=$searcher->multiMatchQuery($_POST["query"]);
         echo json_encode($books);
     }
     else if(isset($_POST["downloadFile"]))

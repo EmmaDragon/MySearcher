@@ -48,11 +48,12 @@ and open the template in the editor.
                                                
 				        </div>
                                          <div class="form-group">
-                                         <label class="text-white mt-0 mb-0" for="searchByParams">Search by...</label>
+                                         <label class="text-white mt-0 mb-0" for="searchByParams">Type of search...</label>
                                         <select class="form-control" id="searchByValue" >
-                                                <option value="title">Title</option>
-                                                <option value="content">Content</option>
-                                                <option value="any">Any</option>
+                                                <option value="title">Single Field Match (by title)</option>
+                                                <option value="content">Single Field Match (by content)</option>
+                                                <option value="multipleFieldMatch">Multiple Field Match</option>
+                                                <option value="multiMatchQuery">Multi Match Query</option>
                                         </select>
                                          </div>
                                         <div class="form-group" >
