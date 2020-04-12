@@ -59,11 +59,50 @@ class Searcher {
             $content = $file[_source][content];
             $dateModified=$file[_source][date_modified];
             $rank = $file[_score];
-            $book = new Book($id,$title,$content,$dateModified,$rank);
+            $book = new Book($id,$title,$dateModified,$rank);
             array_push($books, $book);
-            $book->printInfoBook();
+            
         }
         return $books;
+    }
+    public function convertResultToFullBook($results)
+    {
+        error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+        foreach ($results[hits][hits] as $file )
+        {
+            $id= $file[_id];
+            $title = $file[_source][title];
+            $content = $file[_source][content];
+            $dateModified=$file[_source][date_modified];
+            $rank = $file[_score];
+            $book = new Book($id,$title,$dateModified,$rank);
+            $book->content=$content;  
+        }
+        return $book;
+    }
+    public function searchDocumentsById($field, $query)
+    {
+        error_reporting(E_ALL & ~E_WARNING);
+        $client = $this->openConnection();
+
+        $params = [
+            'index' => INDEX,   
+            'type' => 'doc',    
+                               
+            'body' => [
+                'from' => 0,    
+                'size' => 10,
+                'query' => [
+                    'match' => [
+                        $field => $query  
+                    ]
+                ]
+            ]
+        ];
+
+        $results = $client->search($params);
+        $book=$this->convertResultToFullBook($results);
+        return $book;
         
     }
 

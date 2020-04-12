@@ -4,9 +4,19 @@
     require_once 'Searcher.php';
 
     $indexer = new Indexer();
+    $searcher = new Searcher();
     //$indexer->deleteIndex();
     //$indexer->createIndex();
     //$indexer->indexFiles('../books/*.txt');
-    $searcher = new Searcher();
-    echo $searcher->searchText("content", "anna");
+    //echo $searcher->searchText("content", "anna");
+    if(isset($_POST["singleFiledSearch"]))
+    {
+        $books=$searcher->searchText($_POST["typeOfSearch"],$_POST["query"]);
+        echo json_encode($books);
+    }
+    else if(isset($_POST["downloadFile"]))
+    {
+        $book=$searcher->searchDocumentsById($_POST["typeOfSearch"],$_POST["query"]);
+        echo json_encode($book);
+    }
 ?>
