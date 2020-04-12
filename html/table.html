@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>E-BookStore</title>
+        <title>Result of searching</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -25,47 +25,43 @@ and open the template in the editor.
         <body>
 
     	<nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #f58442; font-size: 1.75rem">HomePage</strong></a> 
+                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #f58442; font-size: 1.75rem">Result</strong></a> 
 	  </nav>
 
     
     <div class="container">
-	<div class="d-flex justify-content-center h-100">
-		<div class="card">
-			<div class="card-header">
-				<h3>#Look for the book</h3>
-			</div>
-			<div class="card-body">
-				<form name="form">
-                                    <p class="text-white">This is an educational application and serves to demonstrate the work of Elasticsearch.
-                                        <br>The application allows you to search books based on your query.
-                                    </p>
-					<div class="input-group form-group">
-						<div class="input-group-prepend">
-						<span class="input-group-text"><i class="fas fa-search"></i></span>
-						</div>
-						<input id="queryString" type="text" class="form-control" aria-labelledby="search" placeholder="Search..." name="search" autocomplete="on">
-                                               
-				        </div>
-                                         <div class="form-group">
-                                         <label class="text-white mt-0 mb-0" for="searchByParams">Search by...</label>
-                                        <select class="form-control" id="searchByValue" >
-                                                <option value="title">Title</option>
-                                                <option value="content">Content</option>
-                                                <option value="any">Any</option>
-                                        </select>
-                                         </div>
-                                        <div class="form-group" >
-						<input  type="button" id="searchDocuments" value="Search" class="btn float-right login_btn">
-					</div>
-				</form>
-			</div>
-                    <div class="card-footer">
-		    <div class="d-flex justify-content-center links">
-		        <a class="text-white" href="https://www.elfak.ni.ac.rs/">@2020 Elfak</a>
-                    </div>
-	</div>
-</div>
+        <table class="mt-5 table text-center" >
+        <thead class="bg-dark text-white"> 
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Date Modified</th>
+        <th scope="col">Content</th>
+        <th scope="col">Rank</th>
+        </tr>
+        </thead>
+        <tbody id="resultOfSearch">
+        <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        </tr>
+        <tr>
+        <th scope="row">2</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        </tr>
+   
+  </tbody>
+</table>
+    </div>
   <script src="../js/index.js" ></script>
   <script src="../javascript/jquery-migrate-3.0.1.min.js"></script>
   <script src="../javascript/popper.min.js"></script>

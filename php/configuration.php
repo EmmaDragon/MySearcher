@@ -5,5 +5,5 @@ define('PORT', '9200');
 define('SCHEME', 'http');
 define('USER', 'elastic');
 define('PASS', 'elastic');
-define('INDEX', 'primer');
+define('INDEX', 'books');
 ?>
