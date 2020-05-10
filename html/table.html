@@ -10,62 +10,70 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-
-
-        <link rel="stylesheet" href="../css/index.css">  </head>
-    
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/tablePage.css">  
         <body id="myBody">
 
     	<nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #f58442; font-size: 1.75rem">Result</strong></a> 
+                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #007bff; font-size: 1.75rem">Result</strong></a> 
 	  </nav>
 
     
-    <div class="container">
-        <table id="resultTable" class="mt-5 table text-center" >
-        <thead class="bg-dark text-white"> 
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">Id</th>
-        <th scope="col">Title</th>
-        <th scope="col">Date Modified</th>
-        <th scope="col">Content</th>
-        <th scope="col">Rank</th>
-        </tr>
-        </thead>
-        <tbody class="text-white" id="resultOfSearch">
-        
-   
-        </tbody>
-    </table>
+      <div class="card-body">
+        <div class="table responsive">
+          <table class="table table-bordered text-center "  style="background-color: transparent; font:white !important;" id="dataTable" width="100%" cellspacing="0">
+            <thead class="rounded-top" style=" background-color:#21232a; color:white; text-align:center;">
+              <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Date Modified</th>
+                <th>Rank</th>
+                <th>Download File</th>
+              </tr>
+            </thead>
+            <tbody  id="bodyTable" style="font-style: bold; color:white; ">
+
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="color:#007bff">Obaveštenje</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="messageContent">Uspešto ste preuzeli željeni sadržaj!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div id="loadModal" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="width: 60px">
+                <span class="fa fa-spinner fa-spin fa-3x" style="color:#f58442;"></span>
+            </div>
+        </div>
     </div>
-  <script src="../js/FileSaver.js" ></script>
-  <script src="../js/table.js" ></script>
-  <script src="../javascript/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../javascript/popper.min.js"></script>
-  <script src="../javascript/bootstrap.min.js"></script>
-  <script src="../javascript/jquery.easing.1.3.js"></script>
-  <script src="../javascript/jquery.waypoints.min.js"></script>
-  <script src="../javascript/jquery.stellar.min.js"></script>
-  <script src="../javascript/owl.carousel.min.js"></script>
-  <script src="../javascript/jquery.magnific-popup.min.js"></script>
-  <script src="../javascript/aos.js"></script>
-  <script src="../javascript/jquery.animateNumber.min.js"></script>
-  <script src="../javascript/bootstrap-datepicker.js"></script>
-  <script src="../javascript/jquery.timepicker.min.js"></script>
-  <script src="../javascript/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeVa1hULe3G5LCVW3Ji88SdPSxGEw9e3M&sensors=true"></script>
-  <script src="../javascript/google-map.js"></script>
-  <script src="../javascript/jquery.cookie.js"></script>
-  <script src="../javascript/main.js"></script>
+<script src="../js/FileSaver.js" ></script>
+<script src="../js/table.js" ></script>
+<script src="../js/datatables-demo.js" ></script>
+<script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
 </body>
     
 </html>

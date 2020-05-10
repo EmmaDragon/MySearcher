@@ -2,7 +2,7 @@ const table = document.getElementById("resultOfSearch");
 const body = document.getElementById("myBody");
 let result = [];
 
-body.onload = (ev) => editTable();
+//body.onload = (ev) => editTable();
 
 function editTable()
 {
@@ -37,6 +37,7 @@ function addEvents()
 }
 function downloadFile(x)
 {
+    
     const formData = new FormData();
     formData.append("query",x);
     formData.append("typeOfSearch","_id");
@@ -63,6 +64,6 @@ function saveFile(res)
 {
    blob = new Blob([res.content], {type: "text/plain;charset=utf-8"});
    saveAs(blob, res.title);
-   alert(res.title+" - saved!!!");
+   $("#myModal").modal('show');
 
 }
