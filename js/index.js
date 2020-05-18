@@ -2,7 +2,9 @@ const queryString = document.getElementById("queryString");
 const searchType = document.getElementById("searchByValue");
 const btnSearch = document.getElementById("searchDocuments");
 
+
 btnSearch.onclick = (ev) => searchDocuments(ev);
+
 
 function singleFiledSearch(ev)
 {

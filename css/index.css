@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/2/a/6/165799.jpg');
+background-image: url('http://getwallpapers.com/wallpaper/full/a/2/3/90096.jpg');
 
 background-size: cover;
 background-repeat: no-repeat;
-height: 105%;
+height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
@@ -15,7 +15,7 @@ align-content: center;
 }
 
 .card{
-height: 60%;
+height: 70%;
 margin-top: auto;
 margin-bottom: auto;
 margin-left: 60%;
@@ -36,7 +36,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 40px;
-background-color: #f57542;
+background-color: #007bff;
 color: white;
 border:0 !important;
 }
@@ -61,7 +61,7 @@ margin-right: 5px;
 
 .login_btn{
 color: white;
-background-color: #f57542;
+background-color: #007bff;
 width: 100px;
 }
 
@@ -78,3 +78,42 @@ color: white;
 margin-left: 4px;
 }
 
+#file-input {
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    filter: alpha(opacity=0); /* IE < 9 */
+    opacity: 0;
+  }
+  .input-label {
+    cursor: pointer;
+    position: center;
+    display: block;
+    color:#007bff;
+    
+  }
+  .modal {
+    
+    position: center;
+    float: left;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .bd-example-modal-lg .modal-dialog{
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    top: calc(50% - 24px);
+  }
+  
+  .bd-example-modal-lg .modal-dialog .modal-content{
+    background-color: transparent;
+    border: none;
+  }

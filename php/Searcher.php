@@ -34,7 +34,7 @@ class Searcher {
                                
             'body' => [
                 'from' => 0,    
-                'size' => 10,
+                'size' => 50,
                 'query' => [
                     'match' => [
                         $field => $query  
